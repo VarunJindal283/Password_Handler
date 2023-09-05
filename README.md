@@ -26,7 +26,10 @@ $ cd password-handler
 
 2. Build the project:
 
-$ gcc -o password_handler main.c -L. -lpassword_lib -lsort_lib
+$ gcc -c main.c -o main.o
+$ gcc -c lib-encrypt.c -o encrypt.c
+$ ar rcs encrypt.a encrypt.c
+$ gcc -o main main.o -L. encrypt.a
 
 ## Contributing
 
